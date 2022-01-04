@@ -1,13 +1,14 @@
 ﻿using System.IO;
 
-namespace Zeats.MD5.Extensions;
-
-public static class StreamExtensions
+namespace Zeats.MD5.Extensions
 {
-    public static byte[] ComputeHash(this Stream stream)
+    public static class StreamExtensions
     {
-        using var md5 = System.Security.Cryptography.MD5.Create();
+        public static byte[] ComputeHash(this Stream stream)
+        {
+            using var md5 = System.Security.Cryptography.MD5.Create();
 
-        return md5.ComputeHash(stream);
+            return md5.ComputeHash(stream);
+        }
     }
 }

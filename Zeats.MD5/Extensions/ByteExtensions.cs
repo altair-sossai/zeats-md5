@@ -1,11 +1,12 @@
-﻿namespace Zeats.MD5.Extensions;
-
-public static class ByteExtensions
+﻿namespace Zeats.MD5.Extensions
 {
-    public static byte[] ComputeHash(this byte[] bytes)
+    public static class ByteExtensions
     {
-        using var md5 = System.Security.Cryptography.MD5.Create();
+        public static byte[] ComputeHash(this byte[] bytes)
+        {
+            using var md5 = System.Security.Cryptography.MD5.Create();
 
-        return md5.ComputeHash(bytes);
+            return md5.ComputeHash(bytes);
+        }
     }
 }
